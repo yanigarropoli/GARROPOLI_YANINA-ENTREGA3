@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar vinos</title>
+</head>
+<body>
+    <nav>
+        <a href={% url "inicio" %}>Inicio</a>
+        <a href={% url "cargar_vinos" %}>Cargar vinos</a>
+        <a href={% url "listar_vinos" %}>Listar Vinos</a>
+        <a href={% url "filtrar_vinos" %}>Filtrar Vinos</a>
+    </nav>
+
+    {%if vinos%}
+        <ul>
+            {%for vino in vinos%}
+            <li>
+                {{vino}}
+            <li>
+                {% endfor %}
+        <ul>
+        {% else %}
+        No hay vinos guardados
+        {% endif %}
+
+    
+</body>
+</html>
