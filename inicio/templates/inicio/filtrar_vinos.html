@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtrar vinos </title>
-</head>
-<body>
-    <nav>
-        <a href={% url "inicio" %}>Inicio</a>
-        <a href={% url "cargar_vinos" %}>Cargar vinos</a>
-        <a href={% url "listar_vinos" %}>Listar Vinos</a>
-        <a href={% url "filtrar_vinos" %}>Filtrar Vinos</a>
-    </nav>
+{% extends "inicio/inicio.html" %}
+{% block h1_header %}{% endblock h1_header %}
 
-    <h1>Filtrar Vinos</h1>
+{% block title_head %}Buscar Vinos{% endblock title_head %}
+{% block contenido %}
+    <h1>Buscar Vinos</h1>
     <form action="" method="GET">
-        {% csrf_token %}
+        
     
   
         {{form}}
-        <input type="submit" value="Filtrar">
+        <input type="submit" value="Buscar">
    
     </form>
 
@@ -36,3 +26,4 @@
         {% else %}
         No hay vinos de esa variedad
         {% endif %}
+ {% endblock contenido  %}

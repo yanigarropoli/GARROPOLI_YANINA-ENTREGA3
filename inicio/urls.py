@@ -5,7 +5,7 @@ urlpatterns = [
     path('', inicio, name="inicio"),
     path('cargar-vinos/', cargar_vinos, name="cargar_vinos"),
     path('listar-vinos/', listar_vinos, name="listar_vinos"),
-    path('filtrar-vinos/', filtrar_vinos, name='filtrar_vinos'),
+    path('filtrar-vinos/', filtrar_vinos, name="filtrar_vinos"),
     
    
 
