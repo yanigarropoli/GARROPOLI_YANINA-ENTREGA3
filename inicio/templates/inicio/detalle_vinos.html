@@ -1,0 +1,16 @@
+{% extends "template_base.html" %}
+
+
+
+
+
+{% block h1_header %}Detalle de {{vino}}{% endblock h1_header %}
+
+{% block contenido %}
+<ul>
+    <li>Variedad: {{vino.variedad}}</li>
+    <li>Etiqueta: {{vino.etiqueta}}</li>
+    <li>Descripcion: {{vino.descripcion}}</li>
+</ul>
+
+{% endblock contenido %}

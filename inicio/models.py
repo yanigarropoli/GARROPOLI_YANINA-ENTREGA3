@@ -9,6 +9,6 @@ class Vinos (models.Model):
     descripcion= models.TextField(null=True, blank=True)
     
     def __str__(self):
-        return f" {self.variedad} {self.etiqueta} {self.descripcion}"
+        return f" {self.variedad} {self.etiqueta} "
 
 

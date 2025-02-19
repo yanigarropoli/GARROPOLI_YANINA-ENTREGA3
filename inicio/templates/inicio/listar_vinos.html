@@ -10,6 +10,7 @@
             {% for vino in vinos %}
             <li>
                 {{vino}} 
+                <a href={% url "detalle_vinos" vino.id %}>Ver mas</a>|
             <li>
             {% endfor %}
         <ul>

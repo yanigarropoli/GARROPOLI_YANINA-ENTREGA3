@@ -46,3 +46,10 @@ def filtrar_vinos(request):
             vinos = vinos.filter(variedad__icontains=variedad) 
     
     return render(request, 'inicio/filtrar_vinos.html', {'form': form, 'vinos': vinos})
+
+def detalle_vinos(request, id):
+    vino= Vinos.objects.get(id=id)
+    return render(request, 'inicio/detalle_vinos.html', {'vino': vino})
+
+
+    
