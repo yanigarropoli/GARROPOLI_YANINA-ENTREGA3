@@ -51,5 +51,14 @@ def detalle_vinos(request, id):
     vino= Vinos.objects.get(id=id)
     return render(request, 'inicio/detalle_vinos.html', {'vino': vino})
 
+def detalle_vinos(request, id):
+    vino= Vinos.objects.get(id=id)
+    return render(request, 'inicio/detalle_vinos.html', {'vino': vino})
+
+def borrar_vinos(request, id):
+    vino= Vinos.objects.get(id=id)
+    vino.delete()
+    return redirect("listar_vinos")
+
 
     
