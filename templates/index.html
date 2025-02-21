@@ -39,20 +39,27 @@
         </nav>
         <!-- Masthead-->
         <header class="py-5">
-            <div class="container px-5 pb-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-xxl-5">
-                        <!-- Header text content-->
-                        <div class="text-center text-xxl-start">
-                        
-                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">{% block h1_header %}{% endblock h1_header %}
-                           
-                                
-                        </div>
-                    </div>
-                   
+                <div class="container px-5 pb-5">
+                    <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
+                <!-- Masthead Heading-->
+                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">{% block h1_header %}{% endblock h1_header %}
+                               
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
                 </div>
-            </div>
+                    
+                   
+                                
+                                    
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
         </header>
         {% block contenido %}
         {% endblock contenido  %}
