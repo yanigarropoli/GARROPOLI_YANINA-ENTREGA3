@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+
+
+{% block title_head %}Registrar{% endblock title_head %}
+
+
+{% block h1_header %}Registrar{% endblock h1_header %}
+
+{% block contenido %}
+
+    <form action={%url "registro" %} method="POST">
+        {% csrf_token %}
+    
+  
+        {{formulario}}
+        <input type="submit" value="Registarse">
+    </form>
+{% endblock contenido  %}

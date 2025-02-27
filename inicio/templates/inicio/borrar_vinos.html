@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+<title>
+    Borrar vino
+</title>
+
+{% block contenido %}
+Borrar {{vinos}}
+    <form action={% url "borrar_vinos" vinos.pk %} method="POST">
+        {% csrf_token %}
+        <p>Confirma el borrado del vino?</p>
+        <input type="submit" value="Confirmar">
+    </form>
+{% endblock contenido %}

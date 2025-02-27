@@ -11,8 +11,8 @@
             <li>
                 {{vino}} 
                 <a href={% url "detalle_vinos" vino.id %}>Ver mas</a>|
-                <a href={% url "borrar_vinos" vino.id %}>Eliminar</a>
-            <li>
+                <a href={% url "editar_vinos" vino.id %}>Editar</a>|
+                <a href={% url "borrar_vinos" vino.id %}>Borrar</a>
             {% endfor %}
         <ul>
     {% else %}

@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block title_head %}Perfil del Usuario{% endblock title_head %}
+
+{% block h1_header %}Perfil del usuario{% endblock h1_header %}
+
+{% block contenido %}
+<h1>Perfil</h1>
+   
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Guardar cambios de avatar y/o hobbies</button>
+
+
+</form>
+<a href="{% url 'editar_perfil' %}">Editar mi perfil</a>
+
+ 
+
+
+
+
+
+{% endblock contenido %}

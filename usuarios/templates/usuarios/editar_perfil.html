@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block title_head %} Editar Perfil del Usuario{% endblock title_head %}
+
+{% block h1_header %}Editar Perfil del usuario{% endblock h1_header %}
+
+{% block contenido %}
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Actualizar perfil</button>
+    
+</form>
+{% endblock contenido  %}

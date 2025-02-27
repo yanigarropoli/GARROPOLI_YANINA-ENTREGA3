@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block title_head %}Editar vinos{% endblock title_head %}
+
+
+ 
+{% block contenido %}
+    Formulario de edicion de  un vino
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+  
+        {{form}}
+        <input type="submit" value="Editar">
+    </form>
+{% endblock contenido  %}
