@@ -5,16 +5,22 @@
 {% block h1_header %}Perfil del usuario{% endblock h1_header %}
 
 {% block contenido %}
-<h1>Perfil</h1>
-   
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form}}
-    <button type="submit">Guardar cambios de avatar y/o hobbies</button>
+<h1>Perfil de {{ user.username }}</h1>
+
+<p><strong>Nombre:</strong> {{ user.first_name }}</p>
+
+<p><strong>Apellido:</strong> {{ user.last_name }}</p>
+
+<p><strong>Email:</strong> {{ user.email}}</p>
+
+<img src="{{ user.infoextra.avatar.url }}" alt="Avatar" width="100">
 
 
-</form>
-<a href="{% url 'editar_perfil' %}">Editar mi perfil</a>
+<p><strong>Hobbies:</strong> {{ user.infoextra.hobbies }}</p>
+
+<a href="{% url 'editar_perfil' %}">Editar perfil</a>
+
+
 
  
 

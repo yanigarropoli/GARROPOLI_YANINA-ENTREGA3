@@ -7,11 +7,10 @@
 {% block contenido %}
 
 
-<form method="post" enctype="multipart/form-data">
+<h1>Editar Perfil</h1>
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form }}
-    
-    <button type="submit">Actualizar perfil</button>
-    
+    <button type="submit">Guardar Cambios</button>
 </form>
 {% endblock contenido  %}

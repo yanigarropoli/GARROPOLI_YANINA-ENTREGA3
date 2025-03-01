@@ -38,39 +38,38 @@ def registro(request):
     return render(request, 'usuarios/registrar.html', {'formulario': formulario})
 
 
+
+   
+    
 @login_required
 def perfil(request):
- 
+   
+    user_profile = InfoExtra.objects.get(user=request.user)
+
+    return render(request, 'usuarios/perfil.html', {'user_profile': user_profile})
+
+def editar_perfil(request):
+     
     info_extra = request.user.infoextra
     
     if request.method == 'POST':
         form = NuestroUserChangeForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
-            
             if form.cleaned_data.get('avatar'):
                 info_extra.avatar = form.cleaned_data.get('avatar')
-            
             if form.cleaned_data.get('hobbies'):
                 info_extra.hobbies = form.cleaned_data.get('hobbies')
-            
-        
-            
+               
             info_extra.save()
             
             form.save()
-            return redirect('editar_perfil')
+          
+            
     else:
-      form= NuestroUserChangeForm(instance=request.user, initial={'avatar': info_extra.avatar,'hobbies': info_extra.hobbies})
-    return render(request, 'usuarios/perfil.html', {'form': form})
+        form= NuestroUserChangeForm(instance=request.user, initial={'avatar': info_extra.avatar,'hobbies': info_extra.hobbies})
+    return render(request, 'usuarios/editar_perfil.html', {'form': form})
 
-
-
-
-class editar_perfil(UpdateView):
-    model =User
-    template_name = 'usuarios/editar_perfil.html'  
-    success_url = reverse_lazy('perfil')  
-    fields= ['email', 'first_name', 'last_name']
-
-    def get_object(self):
-        return self.request.user
+      
+        
+            
+ 
