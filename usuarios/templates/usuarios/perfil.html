@@ -12,11 +12,13 @@
 <p><strong>Apellido:</strong> {{ user.last_name }}</p>
 
 <p><strong>Email:</strong> {{ user.email}}</p>
-
+{% if request.user.infoextra.avatar %}
 <img src="{{ user.infoextra.avatar.url }}" alt="Avatar" width="100">
+{% endif %}
 
 
 <p><strong>Hobbies:</strong> {{ user.infoextra.hobbies }}</p>
+
 
 <a href="{% url 'editar_perfil' %}">Editar perfil</a>
 

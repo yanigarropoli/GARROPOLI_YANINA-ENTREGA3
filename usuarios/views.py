@@ -63,6 +63,8 @@ def editar_perfil(request):
             info_extra.save()
             
             form.save()
+            
+            return redirect('perfil')
           
             
     else:
