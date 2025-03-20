@@ -28,7 +28,7 @@ class NuestroUserChangeForm(UserChangeForm):
     hobbies=forms.CharField(required=False)
     class Meta:
         model = User
-        fields = ['avatar', 'hobbies']
+        fields = ['first_name', 'last_name','email','avatar', 'hobbies']
         
 
 

@@ -44,9 +44,9 @@ def registro(request):
 @login_required
 def perfil(request):
    
-    user_profile = InfoExtra.objects.get(user=request.user)
+    #user_profile = InfoExtra.objects.get(user=request.user)
 
-    return render(request, 'usuarios/perfil.html', {'user_profile': user_profile})
+    return render(request, 'usuarios/perfil.html')
 
 def editar_perfil(request):
      
